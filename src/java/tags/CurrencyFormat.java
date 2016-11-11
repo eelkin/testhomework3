@@ -15,10 +15,9 @@ import java.util.*;
 
 import model.*;
 
-/**
- *
- * @author eelkin
- */
+/*
+  Java class for the Currency Format custom tag.
+*/
 public class CurrencyFormat extends TagSupport{
     
     private double value;
@@ -30,12 +29,12 @@ public class CurrencyFormat extends TagSupport{
     @Override
     public int doStartTag() throws JspException {
         try{
-          NumberFormat formatter = NumberFormat.getCurrencyInstance();  
-          JspWriter out = pageContext.getOut();
-          out.print(formatter.format(value));
+            NumberFormat formatter = NumberFormat.getCurrencyInstance();  
+            JspWriter out = pageContext.getOut();
+            out.print(formatter.format(value));
           
         } catch (IOException ioe) {
-          System.out.println(ioe);
+            System.out.println(ioe);
         }
         return SKIP_BODY;
     }

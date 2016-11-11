@@ -15,22 +15,21 @@ Campus Box 7947, Elon University, Elon, NC 27244
   Servlet-->
   <form action="calculate" method="post">
     <input type="hidden" name="action" value="add"> 
-    <div class="inputField">
+    <div class="input-field">
       <label class="entry">Investment Amount</label>
-      <input class="retrieve" type="number" min="0" name="amount" value="${calculator.investmentAmount}"
-             placeholder= "${c.amount}" required><br>
+      <input class="retrieve" type="number" min="0" step="any" name="amount" value="${amount}" required><br>
       
     </div>
-    <div class="inputField">
+    <div class="input-field">
       <label class="entry">Yearly Interest Rate</label>
-      <input class="retrieve" type="number" min="0" name="rate" value="${calculator.yearlyInterestRate}" required><br>
+      <input class="retrieve" type="number" min="0" step="any" name="rate" value="${rate}" required><br>
     </div>
-    <div class="inputField">
+    <div class="input-field">
       <label class="entry">Number of Years</label>
-      <input class="retrieve" type="number" min="0" step="1" name="years" value="${calculator.numberOfYears}" 
+      <input class="retrieve" type="number" min="0" step="1" name="years" value="${years}" 
           placeholder="Integer number of years" required><br> 
     </div>
-    <div class="inputField">
+    <div class="input-field">
     <input class= "button" type="submit" value="Calculate">
     </div>
     </form>

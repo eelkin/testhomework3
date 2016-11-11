@@ -14,38 +14,35 @@ Campus Box 7947, Elon University, Elon, NC 27244
     <div class="wrapper"> <!--Wrapper for border-->
     <!-- Displays collected info and calculation after going through Homework
     Servlet-->
-    <h1 id="thanksTitle">Future Value Calculator</h1>
-    <div class="inputField">
-      <label>Investment Amount:</label>
-      <span><elon:currencyFormat value="${calculator.investmentAmount}"/></span><br>
+    <h1 id="thanks-title">Future Value <span id="breaker"><br></span> Calculator</h1>
+    <div class="input-field">
+      <label class="result-label">Investment Amount:</label>
+      <span class="result-value"><elon:currencyFormat value="${calculator.investmentAmount}"/></span><br>
     </div>
-    <div class="inputField">
-      <label>Yearly Interest Rate:</label>
-      <span>${calculator.yearlyInterestRate}
-        </span><br>
+    <div class="input-field">
+      <label class="result-label">Yearly Interest Rate:</label>
+      <span class="result-value">${calculator.yearlyInterestRate}</span><br>
     </div>
-    <div class="inputField">
-      <label>Number of Years:</label>
-      <span>${calculator.numberOfYears}</span><br>
+    <div class="input-field">
+      <label class="result-label">Number of Years:</label>
+      <span class="result-value">${calculator.numberOfYears}</span><br>
     </div>
-    <div class="inputField">
-      <label>Future Value:</label>
-      <span><elon:currencyFormat value="${calculator.futureValue}" /></span><br>
+    <div class="input-field">
       <table>
-      <tr>
+        <tr>
           <td><strong>Year</strong></td>
           <td><strong>Value</strong></td>
-      <tr> 
+        <tr> 
       
-      <c:forEach var="value" items="${calculators}" varStatus="status">
-        <tr>
-          <td>${status.count}</td>
-          <td><elon:currencyFormat value="${value.futureValue}" /></td>
-        </tr>
-      </c:forEach>
+        <c:forEach var="value" items="${calculators}" varStatus="status">
+          <tr>
+            <td>${status.count}</td>
+            <td><elon:currencyFormat value="${value.futureValue}" /></td>
+          </tr>
+        </c:forEach>
       </table>
     </div>
     
-    <nav><a href ="index.jsp">Return to Calculator</nav>
+    <a id="return" href="index.jsp">Return to Calculator</a>
     </div>
 <%@ include file="/includes/footer.html" %>

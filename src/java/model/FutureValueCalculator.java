@@ -8,6 +8,11 @@ Campus Box 7947, Elon University, Elon, NC 27244
 Copyright (c) 2016 Breslin Wiley
 Campus Box 7947, Elon University, Elon, NC 27244
 */
+
+/*
+  Java class that calculates the compound interest based on investment amount,
+  yearly interest rate, and the number of years of compounding interest
+*/
 package model;
 
 public class FutureValueCalculator {

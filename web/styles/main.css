@@ -4,6 +4,9 @@ Campus Box 7915, Elon University, Elon, NC 27244
 
 Copyright (c) 2016 Evan Elkin
 Campus Box 7947, Elon University, Elon, NC 27244
+
+Copyright (c) 2016 Breslin Wiley
+Campus Box 7947, Elon University, Elon, NC 27244
 */
 /* 
 Laptop View and style for all pages 
@@ -51,8 +54,19 @@ span {
   margin-left: .5em;
 }
 
-br{
-    clear: both;
+br {
+  clear: both;  
+}
+
+table {
+  width: 25em;
+}
+
+tr {
+  color: black;
+  font: 100% Arial, sans-serif;
+  margin-left: 2em;
+  padding-bottom: .5em;
 }
 
 footer {
@@ -61,10 +75,14 @@ footer {
   font-size: 100%;
 }
 
-.inputField {
+.input-field {
   margin: 0 auto;
   padding-bottom: .25em;
   width: 24em;
+}
+
+.result-label {
+  text-align: left;
 }
 
 .button {
@@ -74,20 +92,34 @@ footer {
   margin-left: 15em;
   width: 7em;
 }
-nav{
-    display: block;
+
+.breaker {
+  display: none;
+}
+
+#return {
+  clear: both;
+  display: block;
+  font: 100% Arial, sans-serif;
+  margin: auto;
+  width: 22em;
 }
 /*Code for mobile view across all pages*/
 @media all and (max-width: 400px) {
+  
+  h1 {
+    margin: .75em;
+  }
+  
   input {
     height: 3em;
+    margin-left: 3em;
     width: 18em;
-    margin-left: 3em; 
   }
   
   .entry {
-    text-align: left;
     margin-left: 2em;
+    text-align: left;
   }
   
   .button {
@@ -95,7 +127,20 @@ nav{
     margin-left: 3em;
   }
   
-  #thanksTitle {
+  .input-field {
+    margin: 0 2em;
+  }
+  
+  #thanks-title {
     font-size: 100%;
-  }  
+  }
+  
+  #return {
+    font-size: .8em;
+    padding: 0 0 1em;
+  }
+  
+  .breaker {
+    display: inline;
+  }
 }

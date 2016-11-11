@@ -28,6 +28,7 @@ public class HomeworkServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, 
       HttpServletResponse response)
         throws ServletException, IOException {
+        //creates HttpSession class
         HttpSession session = request.getSession();
         
       
@@ -43,30 +44,26 @@ public class HomeworkServlet extends HttpServlet {
         url = "/index.jsp";
       }
       else if (action.equals("add")) {
+        //gets the parameters from the index  
         String amount = request.getParameter("amount");
         String rate = request.getParameter("rate");
         String years = request.getParameter("years");
         
-        /*
-        Cookie cookie = new Cookie("productCode", "8601");
-        cookie.setMaxAge(60*60*24);
-        response.addCookie(cookie);
-        cookie.setPath("/");
-        */
-        
-        session.setAttribute("years", years);
-        session.setAttribute("rate", rate);
-        session.setAttribute("amount",amount);
-        session.setMaxInactiveInterval(-1);
-        
-        double investmentAmount = Integer.parseInt(amount);
-        double yearlyInterestRate = Integer.parseInt(rate);
+        //converts request parameter
+        double investmentAmount = Double.parseDouble(amount);
+        double yearlyInterestRate = Double.parseDouble(rate);
         int numberOfYears = Integer.parseInt(years);
         
+        //sets attributes for the session object
+        session.setAttribute("amount", investmentAmount);
+        session.setAttribute("rate", yearlyInterestRate);
+        
+        //creates calculator
         Calculator calculator = new Calculator(investmentAmount,
           yearlyInterestRate, numberOfYears);    
         request.setAttribute("calculator", calculator);
         
+        //creates array of calculators to show future values
         Calculator[] calculators = new Calculator[numberOfYears];
         for(int i = 0; i < numberOfYears; i++) {
             calculators[i] = new Calculator(investmentAmount, yearlyInterestRate, i+1);
@@ -74,7 +71,7 @@ public class HomeworkServlet extends HttpServlet {
         request.setAttribute("calculators", calculators);
         
         url = "/thanks.jsp";
-        }
+      }
         
       getServletContext().getRequestDispatcher(url)
         .forward(request, response);

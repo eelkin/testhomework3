@@ -12,19 +12,20 @@ package model;
 
 import java.io.Serializable;
 
+/*
+  The calculator JavaBean
+*/
 public class Calculator implements Serializable {
   private double investmentAmount;
   private double yearlyInterestRate;
   private int numberOfYears;
   private double futureValue;
-  //private double[] futureValues;
     
   public Calculator() {
     investmentAmount = 0;
     yearlyInterestRate = 0;
     numberOfYears = 0;
     futureValue = 0;
-    //futureValues = new double[numberOfYears];
   }
     
   public Calculator(double investmentAmount, double yearlyInterestRate, 
@@ -33,7 +34,7 @@ public class Calculator implements Serializable {
       this.yearlyInterestRate = yearlyInterestRate;
       this.numberOfYears = numberOfYears;
       this.futureValue = FutureValueCalculator.findFutureValue(investmentAmount, 
-            yearlyInterestRate, numberOfYears);
+        yearlyInterestRate, numberOfYears);
     }
     
     public double getInvestmentAmount() {
@@ -70,16 +71,4 @@ public class Calculator implements Serializable {
             yearlyInterestRate, numberOfYears);
     }
     
-    /*
-    public double[] getFutureValues(double[] futureValues) {
-        return futureValues;
-    }
-    
-    public void addFutureValues() {
-        for(int i = 0; i < numberOfYears; i++) {
-            //values[i-1] = investmentAmount * Math.pow(1 + yearlyInterestRate / 100, i);
-            futureValues[i] = investmentAmount * Math.pow(1 + yearlyInterestRate / 100, i+1);
-        }
-    }
-    */
 }
